@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guess the Number</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Guess the Number</h1>
+
+    <section class="range-card">
+      <h2 class="visually-hidden">Range selection</h2>
+      <label>
+        Min:
+        <input id="min" type="number" value="1" />
+      </label>
+      <label>
+        Max:
+        <input id="max" type="number" value="100" />
+      </label>
+      <button id="set-range" class="btn">Set Range</button>
+    </section>
+
+    <section class="game-card" aria-live="polite" aria-atomic="true">
+      <h2 class="visually-hidden">Game</h2>
+      <p id="status" class="status">Pick a number between 1 and 100.</p>
+
+      <form id="guess-form" autocomplete="off">
+        <input
+          id="guess-input"
+          type="number"
+          inputmode="numeric"
+          placeholder="Enter your guess"
+          required
+        />
+        <button type="submit" class="btn">Guess</button>
+        <button type="button" id="reset" class="btn secondary">Reset</button>
+      </form>
+
+      <div class="info">
+        <p>Attempts: <span id="attempts">0</span></p>
+        <p>Previous guesses: <span id="history">—</span></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Simple HTML/CSS/JS game</small>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
